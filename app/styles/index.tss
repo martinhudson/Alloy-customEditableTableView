@@ -1,0 +1,15 @@
+".container": {
+	backgroundColor:"white"
+},
+"#table1": {
+	left: '10dp',
+	right: '10dp',
+	top: '20dp',
+	bottom:'80dp'
+},
+"#btnEdit": {
+	bottom:'10dp',
+	left:'20dp',
+	right:'20dp',
+	height:'45dp'
+}

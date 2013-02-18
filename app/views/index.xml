@@ -1,0 +1,6 @@
+<Alloy>
+	<Window class="container">
+		<Require type="widget" src="co.mobiledatasystems.customEditableTable" id="table1"></Require>
+		<Button id="btnEdit" title="Allow Editing" onClick="btnEdit_click_Event"></Button>
+	</Window>
+</Alloy>
