@@ -13,7 +13,7 @@ function Controller() {
     $model = arguments[0] ? arguments[0].$model : null;
     var $ = this, exports = {}, __defers = {};
     $.__views.index = A$(Ti.UI.createWindow({
-        backgroundColor: "white",
+        backgroundColor: "gray",
         id: "index"
     }), "Window", null);
     $.addTopLevelView($.__views.index);
@@ -22,6 +22,10 @@ function Controller() {
         right: "10dp",
         top: "20dp",
         bottom: "80dp",
+        backgroundColor: "orange",
+        borderWidth: 1,
+        borderRadius: 4,
+        borderColor: "black",
         id: "table1"
     });
     $.__views.table1.setParent($.__views.index);
@@ -39,14 +43,33 @@ function Controller() {
     _.extend($, $.__views);
     $.index.open();
     var editMode = !1, rows = [];
-    for (var i = 0; i < 10; i++) rows.push(Ti.UI.createTableViewRow({
-        title: "Row number " + i
-    }));
+    for (var i = 0; i < 10; i++) {
+        var view = Ti.UI.createView({
+            height: "60dp",
+            backgroundColor: "transparent"
+        }), lbl = Ti.UI.createLabel({
+            text: "Row number " + i,
+            font: {
+                fontSize: "20dp"
+            },
+            left: "10dp",
+            height: "50dp",
+            right: "10dp",
+            color: "black"
+        });
+        view.add(lbl);
+        var row = Ti.UI.createTableViewRow({
+            height: "60dp",
+            rowTitle: "Row number " + i
+        });
+        row.add(view);
+        rows.push(row);
+    }
     $.table1.setData(rows);
     $.table1.addEventListener("click", function(r) {
         Ti.API.info("row clicked: " + JSON.stringify(r));
         var dialog = Ti.UI.createAlertDialog({
-            message: r.row.title,
+            message: r.row.rowTitle,
             title: "Clicked"
         });
         dialog.show();
@@ -54,7 +77,7 @@ function Controller() {
     $.table1.addEventListener("delete", function(r) {
         Ti.API.info("row deleted: " + JSON.stringify(r));
         var dialog = Ti.UI.createAlertDialog({
-            message: r.row.title,
+            message: r.row.rowTitle,
             title: "Deleted"
         });
         dialog.show();

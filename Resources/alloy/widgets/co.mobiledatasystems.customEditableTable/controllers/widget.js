@@ -43,7 +43,7 @@ function Controller() {
         if (editable == 1) {
             var dialog = Ti.UI.createAlertDialog({
                 buttonNames: [ "Delete", "Cancel" ],
-                message: "Delete " + r.row.title,
+                message: "Delete " + r.row.rowTitle + "?",
                 title: "Delete"
             });
             dialog.addEventListener("click", function(e) {

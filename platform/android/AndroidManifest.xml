@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="co.mobiledatasystems.TiLondon" android:versionCode="1"
+	android:versionName="1">
+	<uses-sdk android:minSdkVersion="8" />
+
+	<!-- TI_MANIFEST -->
+
+	<application android:icon="@drawable/appicon"
+		android:label="TiLondon" android:name="TilondonApplication"
+		android:debuggable="false">
+
+		<!-- TI_APPLICATION -->
+
+		<activity android:name=".TilondonActivity"
+			android:label="TiLondon" android:theme="@style/Theme.Titanium"
+			android:screenOrientation="portrait"
+			android:configChanges="keyboardHidden">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		
+
+		<activity android:name="org.appcelerator.titanium.TiActivity"
+		    android:screenOrientation="portrait"
+			android:configChanges="keyboardHidden" />
+		<activity android:name="org.appcelerator.titanium.TiTranslucentActivity"
+		    android:screenOrientation="portrait"
+			android:configChanges="keyboardHidden"
+			android:theme="@android:style/Theme.Translucent" />
+		<activity android:name="org.appcelerator.titanium.TiModalActivity"
+		    android:screenOrientation="portrait"
+			android:configChanges="keyboardHidden"
+			android:theme="@android:style/Theme.Translucent" />
+		<activity android:name="ti.modules.titanium.ui.TiTabActivity"
+		    android:screenOrientation="portrait"
+			android:configChanges="keyboardHidden" />
+		<activity android:name="ti.modules.titanium.ui.android.TiPreferencesActivity" />
+
+		<service android:name="org.appcelerator.titanium.analytics.TiAnalyticsService"
+			android:exported="false" />
+		
+
+	</application>
+
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	
+
+</manifest>

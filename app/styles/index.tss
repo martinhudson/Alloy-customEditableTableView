@@ -1,10 +1,15 @@
 ".container": {
-	backgroundColor:"white"
+	backgroundColor:"gray"
 },
 "#table1": {
 	left: '10dp',
 	right: '10dp',
 	top: '20dp',
+	bottom:'80dp',
+	backgroundColor:'orange',
+	borderWidth:1,
+	borderRadius:4,
+	borderColor:'black',
 	bottom:'80dp'
 },
 "#btnEdit": {
