@@ -10,7 +10,8 @@
 	borderWidth:1,
 	borderRadius:4,
 	borderColor:'black',
-	bottom:'80dp'
+	bottom:'80dp',
+	labelColor:'blue'
 },
 "#btnEdit": {
 	bottom:'10dp',

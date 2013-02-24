@@ -26,6 +26,7 @@ function Controller() {
         borderWidth: 1,
         borderRadius: 4,
         borderColor: "black",
+        labelColor: "blue",
         id: "table1"
     });
     $.__views.table1.setParent($.__views.index);
